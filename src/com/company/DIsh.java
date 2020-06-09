@@ -73,6 +73,13 @@ public class DIsh {
         this.portions = portions;
     }
 
+
+    public static DIsh sum(DIsh d1, DIsh d2){
+        DIsh d=new DIsh();
+        d=d2;
+        d.setPrice(d1.price+d2.getPrice());
+        return d;
+    }
     @Override
     public String toString() {
         return "DIsh{" +

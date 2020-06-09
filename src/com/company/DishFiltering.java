@@ -20,4 +20,6 @@ public class DishFiltering {
                 .min(Comparator.comparing(dish -> dish.price<20))
                 .get();
     }
+
+
 }

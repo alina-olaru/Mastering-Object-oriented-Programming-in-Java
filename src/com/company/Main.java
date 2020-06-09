@@ -1,9 +1,17 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 
 public class Main {
+
+    @Override
+    public String toString() {
+        return "Main{}";
+    }
 
     public static void main(String[] args) {
 	// write your code here
@@ -19,6 +27,14 @@ public class Main {
 
         System.out.println(DishFiltering.filterFirst(dIshes));
         System.out.println(dIshes);
+
+        AtomicInteger n = new AtomicInteger(0);
+        Stream<Integer> myStream = Stream.generate(() -> n.incrementAndGet())
+                .limit(100)
+                 .filter(x -> x>50);
+     //   myStream.forEach(e -> System.out.println(e));
+   //     myStream.filter(x -> x>50);
+           myStream.forEach(e -> System.out.println(e));
 
 
     }
